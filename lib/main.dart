@@ -30,6 +30,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Flutter Demo'),
+        centerTitle: true,
       ),
       body: _body(),
       floatingActionButton: FloatingActionButton(
@@ -39,7 +40,23 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  _body() {}
+  _body() {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text('1',
+            style: TextStyle(
+                fontSize: 34,
+            ),),
+          Text('Pressione o botão para adicionar +1',
+            style: TextStyle(
+                fontSize: 20
+            ),)
+        ],
+      )
+    );
+  }
 
   incrementa() {}
 
