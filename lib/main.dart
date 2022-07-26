@@ -25,7 +25,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   int numero = 0;
 
   @override
@@ -37,30 +36,30 @@ class _HomePageState extends State<HomePage> {
       ),
       body: _body(numero),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: () {
-          return _incrementa();
-        }
-        ),
+          child: Icon(Icons.add),
+          onPressed: () {
+            return _incrementa();
+          }),
     );
   }
 
   _body(int numero) {
     return Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text('$numero',
-              style: TextStyle(
-                fontSize: 34,
-              ),),
-            Text('Pressione o botão para adicionar +1',
-              style: TextStyle(
-                  fontSize: 20
-              ),)
-          ],
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(
+          '$numero',
+          style: TextStyle(
+            fontSize: 34,
+          ),
+        ),
+        Text(
+          'Pressione o botão para adicionar +1',
+          style: TextStyle(fontSize: 20),
         )
-    );
+      ],
+    ));
   }
 
   _incrementa() {
@@ -69,7 +68,4 @@ class _HomePageState extends State<HomePage> {
     });
     print('$numero');
   }
-
-
 }
-
