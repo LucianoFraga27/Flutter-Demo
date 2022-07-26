@@ -25,6 +25,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+  int numero = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,32 +35,41 @@ class _HomePageState extends State<HomePage> {
         title: Text('Flutter Demo'),
         centerTitle: true,
       ),
-      body: _body(),
+      body: _body(numero),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
-        onPressed: incrementa(),
-      ),
+        onPressed: () {
+          return _incrementa();
+        }
+        ),
     );
   }
 
-  _body() {
+  _body(int numero) {
     return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text('1',
-            style: TextStyle(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('$numero',
+              style: TextStyle(
                 fontSize: 34,
-            ),),
-          Text('Pressione o botão para adicionar +1',
-            style: TextStyle(
-                fontSize: 20
-            ),)
-        ],
-      )
+              ),),
+            Text('Pressione o botão para adicionar +1',
+              style: TextStyle(
+                  fontSize: 20
+              ),)
+          ],
+        )
     );
   }
 
-  incrementa() {}
+  _incrementa() {
+    setState(() {
+      numero++;
+    });
+    print('$numero');
+  }
+
 
 }
+
